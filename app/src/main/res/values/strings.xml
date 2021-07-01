@@ -1,0 +1,77 @@
+<resources>
+    <string name="app_name">EaseFile</string>
+
+    <string name="action_insert_dummy_data">Insert Dummy Data</string>
+
+    <string name="action_delete_all_entries">Delete All Tasks</string>
+
+    <string name="action_clear_cache">Clear Cache</string>
+
+    <string name="editor_activity_title_new_task">Add a Task</string>
+
+    <string name="action_save">Save</string>
+
+    <string name="action_delete">Delete</string>
+
+    <string name="category_overview">Overview</string>
+
+    <string name="category_task">Task</string>
+
+    <string name="category_measurement">Measurement</string>
+
+    <string name="hint_task_name">Name</string>
+
+    <string name="hint_source_directory">Source Directory</string>
+
+    <string name="hint_destination_directory">Destination Directory</string>
+
+    <string name="task_move">Move</string>
+
+    <string name="task_copy">Copy</string>
+
+    <string name="editor_insert_task_successful">Task saved</string>
+
+    <string name="editor_insert_task_failed">Error with saving task</string>
+
+    <string name="empty_view_title_text">It\'s a bit lonely here...</string>
+
+    <string name="empty_view_subtitle_text">Get started by adding a task</string>
+
+    <string name="editor_activity_title_add_task">Add a Task</string>
+
+    <string name="editor_activity_title_edit_task">Edit Task</string>
+
+    <string name="editor_update_task_failed">Error with updating task</string>
+
+    <string name="editor_update_task_successful">Task updated</string>
+
+    <string name="unsaved_changes_dialog_msg">Discard your changes and quit editing?</string>
+
+    <string name="discard">DISCARD</string>
+
+    <string name="keep_editing">KEEP EDITING</string>
+
+    <string name="editor_delete_task_successful">Task deleted</string>
+
+    <string name="editor_delete_task_failed">Error with deleting task</string>
+
+    <string name="delete_dialog_msg">Delete this task?</string>
+
+    <string name="delete">Delete</string>
+
+    <string name="cancel">Cancel</string>
+
+    <string name="source_folder">Source Folder:</string>
+
+    <string name="destination_folder">Destination Folder:</string>
+
+    <string name="task_type">Task Type:</string>
+
+    <string name="total_storage">Total Storage:</string>
+
+    <string name="available_storage">Available Storage:</string>
+
+    <string name="clear_app_cache">Clear App Cache</string>
+
+    <string name="manage_storage">Manage Storage</string>
+</resources>

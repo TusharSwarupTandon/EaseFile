@@ -1,0 +1,99 @@
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_margin"
+    android:background="@drawable/background_editor_activity"
+    tools:context=".EditorActivity">
+
+    <!-- Overview category -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:text="@string/category_overview"
+            style="@style/CategoryStyle"
+            android:textSize="24sp"
+            />
+
+        <!-- Input fields -->
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:paddingLeft="4dp"
+            android:orientation="vertical">
+
+            <!-- Name field -->
+            <EditText
+                android:id="@+id/edit_pet_name"
+                android:hint="@string/hint_task_name"
+                android:inputType="textCapWords"
+                style="@style/EditorFieldStyle"
+                android:backgroundTint="@color/colorPrimary"
+                android:textColorHint="@android:color/white"
+                tools:text="Hello"
+                android:textColor="#FFFFFF"/>
+
+            <!-- Breed field -->
+            <Button
+                android:id="@+id/edit_source_directory"
+                android:hint="@string/hint_source_directory"
+                android:inputType="textCapWords"
+                android:background="@drawable/rounded_corner_button"
+                android:textColor="#0c1313"
+                android:textStyle="bold"
+                style="@style/EditorFieldStyle" />
+
+            <!-- Breed field -->
+            <Button
+                android:id="@+id/edit_destination_directory"
+                android:hint="@string/hint_destination_directory"
+                android:layout_marginTop="10dp"
+                android:inputType="textCapWords"
+                android:textColor="#0c1313"
+                android:textStyle="bold"
+                android:background="@drawable/rounded_corner_button"
+                style="@style/EditorFieldStyle" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Gender category -->
+    <LinearLayout
+        android:id="@+id/container_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:text="@string/category_task"
+            style="@style/CategoryStyle"
+            android:textSize="24sp"/>
+
+        <!-- Input field -->
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <!-- Gender drop-down spinner -->
+            <Spinner
+                android:id="@+id/spinner_task"
+                android:layout_height="48dp"
+                android:layout_width="wrap_content"
+                android:backgroundTint="@color/colorPrimary"
+                android:paddingRight="16dp"
+                android:spinnerMode="dropdown"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
