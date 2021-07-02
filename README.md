@@ -1,4 +1,4 @@
-# EaseFiles
+# EaseFiles :file_folder:
 Project build for WEBARCH Hackathon (WEB-2.0)
 
 ## Theme
