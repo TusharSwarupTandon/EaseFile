@@ -38,6 +38,7 @@ To view click [here](https://www.canva.com/design/DAEjCcNqMow/W6KEV9Oh-tbhdCgZPq
 ## Challenges we ran into
 - Styling the Pgaes
 - Finding relevant documentation 
+- Implementation of external libraries 
 
 ## What we learned
 - Team Work 
