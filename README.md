@@ -19,13 +19,14 @@ File Management made easy
 ## Problem Statement:
 <!-- Problem Statement: -->
 
-## Demo Video
+## Demo
 Demo video from [here](paste the link here).
 
 ## PPT
 [here](https://www.canva.com/design/DAEjCcNqMow/W6KEV9Oh-tbhdCgZPqDo7g/view?utm_content=DAEjCcNqMow&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
 
-## What it does
+## What it does 
+- .
 
 
 ## How we built it
@@ -35,16 +36,20 @@ Demo video from [here](paste the link here).
 - Adobe XD
 
 ## Challenges we ran into
+- .
+- .
 
 ## What we learned
-
+- Team Work 
+- 
 
 ## Future Updates
+- Auto Sync
 - Cloud storage
 - Sharing Files Through NFC
-- Folder Protection
+- Folder Protection 
 
-## Some glimpse of the site
+## Some glimpse of the App
 
 ![](gitImg/EaseFiles2.png)
 <br>
@@ -53,4 +58,3 @@ Demo video from [here](paste the link here).
 <br>
 
 ![](gitImg/EaseFiles1.png)
-
