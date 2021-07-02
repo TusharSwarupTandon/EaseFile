@@ -46,7 +46,7 @@ Demo video from [here](paste the link here).
 
 ## Some glimpse of the site
 Homepage
-![Homepage](gitImg/2.png)
+![](gitImg/2.png)
 <br>
 Storage
 ![Storage](gitImg/3.png)
