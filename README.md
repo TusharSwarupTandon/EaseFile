@@ -17,7 +17,9 @@ etc.
 File Management made easy
 
 ## Problem Statement:
-<!-- Problem Statement: -->
+- Move and copy data from one folder is a tedious task. 
+- Everytime user need to change the path of a particular folder.
+- In some phone's the screenshot is saved with camera images, which they don’t like always, rather they want that as a separate folder. 
 
 ## Demo
 Demo video from [here](paste the link here).
