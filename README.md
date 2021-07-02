@@ -45,12 +45,12 @@ Demo video from [here](paste the link here).
 - Folder Protection
 
 ## Some glimpse of the site
-Homepage
+
 ![](gitImg/EaseFiles2.png)
 <br>
-Storage
+
 ![](gitImg/EaseFiles3.png)
 <br>
-Clear Cache Memory
+
 ![](gitImg/EaseFiles1.png)
 
