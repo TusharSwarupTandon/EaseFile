@@ -23,25 +23,26 @@ File Management made easy
 Demo video from [here](paste the link here).
 
 ## PPT
-[here](https://www.canva.com/design/DAEjCcNqMow/W6KEV9Oh-tbhdCgZPqDo7g/view?utm_content=DAEjCcNqMow&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
+To view click [here](https://www.canva.com/design/DAEjCcNqMow/W6KEV9Oh-tbhdCgZPqDo7g/view?utm_content=DAEjCcNqMow&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
 
 ## What it does 
-- .
+- EaseFile helps to move files and copy data without manually copying from its file's original path. You no longer need to copy files manually every time into a different folder of your choice. Just have to add the old source path and new fold path so that the app automatically transfers the file from the old path to the new path.
 
 
 ## How we built it
 - Android studio
 - Eazegraph
 - Canva
-- Adobe XD
+- Adobe Photoshop 
 
 ## Challenges we ran into
-- .
-- .
+- Styling the Pgaes
+- Finding relevant documentation 
 
 ## What we learned
 - Team Work 
-- 
+- Time Management 
+- File Management System of Android
 
 ## Future Updates
 - Auto Sync
