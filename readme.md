@@ -46,11 +46,11 @@ Demo video from [here](paste the link here).
 
 ## Some glimpse of the site
 Homepage
-![Homepage](gitImg/2.png)
+![](gitImg/EaseFiles2.png)
+<br>
 Storage
-![Storage](gitImg/3.png)
+![](gitImg/EaseFiles3.png)
+<br>
 Clear Cache Memory
-![Clear Cache Memory](gitImg/1.png)
+![](gitImg/EaseFiles1.png)
 
-## HealthCare
-Project based on HealthCare.
