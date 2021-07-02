@@ -2,7 +2,7 @@
 Project build for WEBARCH Hackathon (WEB-2.0)
 
 ## Theme
-Automation
+Automation :gear:
 
 ## Theme Description
 Build a product that makes everyday life more convenient by taking time 
