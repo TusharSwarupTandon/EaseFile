@@ -21,13 +21,13 @@ import androidx.loader.content.Loader;
 
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -73,6 +73,32 @@ public class CatalogFragment extends Fragment implements LoaderManager.LoaderCal
         View rootView =  inflater.inflate(R.layout.fragment_catalog, container, false);
         requestForPermission();
 
+        ImageButton menu = rootView.findViewById(R.id.pop_up_menu);
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopupMenu popupMenu = new PopupMenu(getContext(),menu);
+                popupMenu.getMenuInflater().inflate(R.menu.menu_catalog, popupMenu.getMenu());
+
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    public boolean onMenuItemClick(MenuItem item) {
+                        switch (item.getItemId())
+                        {
+                            case R.id.action_insert_dummy_data:
+                                insertTask();
+                                break;
+                            case R.id.action_delete_all_entries:
+                                deleteAllTasks();
+                                return true;
+                        }
+                        return true;
+                    }
+                });
+
+                popupMenu.show();
+            }
+        });
+
         FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,21 +138,17 @@ public class CatalogFragment extends Fragment implements LoaderManager.LoaderCal
                 else if(taskInfo.equals("Copy"))
                     condition = 1;
 
-                copyFileOrDirectory(sourceDir, destinationDir, condition);
                 Toast.makeText(getContext(), "Syncing...",Toast.LENGTH_SHORT).show();
+                copyFileOrDirectory(sourceDir, destinationDir, condition);
             }
         });
 
-        filesListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id)
-            {
-                Intent intent = new Intent(getContext(), EditorActivity.class);
-                Uri currentPetUri = ContentUris.withAppendedId(FilesContract.FilesEntry.CONTENT_URI, id);
-                intent.setData(currentPetUri);
-                startActivity(intent);
-                return true;
-            }
+        filesListView.setOnItemLongClickListener((parent, view, position, id) -> {
+            Intent intent = new Intent(getContext(), EditorActivity.class);
+            Uri currentPetUri = ContentUris.withAppendedId(FilesEntry.CONTENT_URI, id);
+            intent.setData(currentPetUri);
+            startActivity(intent);
+            return true;
         });
 
 
@@ -146,26 +168,6 @@ public class CatalogFragment extends Fragment implements LoaderManager.LoaderCal
         values.put(FilesEntry.COLUMN_TASK, FilesEntry.TASK_MOVE);
 
         Uri newUri = getContext().getContentResolver().insert(FilesEntry.CONTENT_URI, values);
-    }
-
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.menu_catalog, menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        switch (item.getItemId())
-        {
-            case R.id.action_insert_dummy_data:
-                insertTask();
-                break;
-            case R.id.action_delete_all_entries:
-                deleteAllTasks();
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 
     private void deleteAllTasks() {
@@ -206,10 +208,11 @@ public class CatalogFragment extends Fragment implements LoaderManager.LoaderCal
         mCursorAdapter.swapCursor(null);
     }
 
-    public static void copyFileOrDirectory(String srcDir, String dstDir, int condition)
+    public void copyFileOrDirectory(String srcDir, String dstDir, int condition)
     {
 
-        try {
+        try
+        {
             File src = new File(srcDir);
             File dst = new File(dstDir, src.getName());
 
@@ -228,10 +231,19 @@ public class CatalogFragment extends Fragment implements LoaderManager.LoaderCal
             {
                 copyFile(src, dst, condition);
             }
+
         }
         catch (Exception e)
         {
             e.printStackTrace();
+        }
+        finally {
+            String type = "";
+            if(condition  == 0)
+                type = "Moved";
+            if(condition == 1)
+                type = "Copied";
+            Toast.makeText(getContext(), "Files "+type+" Successfully.",Toast.LENGTH_SHORT).show();
         }
     }
 

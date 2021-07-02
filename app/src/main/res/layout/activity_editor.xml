@@ -37,7 +37,7 @@
                 android:inputType="textCapWords"
                 style="@style/EditorFieldStyle"
                 android:backgroundTint="@color/colorPrimary"
-                android:textColorHint="@android:color/white"
+                android:textColorHint="#434343"
                 tools:text="Hello"
                 android:textColor="#FFFFFF"/>
 
