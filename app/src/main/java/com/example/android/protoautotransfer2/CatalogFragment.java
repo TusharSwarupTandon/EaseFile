@@ -27,7 +27,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -72,6 +75,32 @@ public class CatalogFragment extends Fragment implements LoaderManager.LoaderCal
         // Inflate the layout for this fragment
         View rootView =  inflater.inflate(R.layout.fragment_catalog, container, false);
         requestForPermission();
+
+        ImageButton menu = rootView.findViewById(R.id.pop_up_menu);
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopupMenu popupMenu = new PopupMenu(getContext(),menu);
+                popupMenu.getMenuInflater().inflate(R.menu.menu_catalog, popupMenu.getMenu());
+
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    public boolean onMenuItemClick(MenuItem item) {
+                        switch (item.getItemId())
+                        {
+                            case R.id.action_insert_dummy_data:
+                                insertTask();
+                                break;
+                            case R.id.action_delete_all_entries:
+                                deleteAllTasks();
+                                return true;
+                        }
+                        return true;
+                    }
+                });
+
+                popupMenu.show();
+            }
+        });
 
         FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -146,26 +175,6 @@ public class CatalogFragment extends Fragment implements LoaderManager.LoaderCal
         values.put(FilesEntry.COLUMN_TASK, FilesEntry.TASK_MOVE);
 
         Uri newUri = getContext().getContentResolver().insert(FilesEntry.CONTENT_URI, values);
-    }
-
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.menu_catalog, menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        switch (item.getItemId())
-        {
-            case R.id.action_insert_dummy_data:
-                insertTask();
-                break;
-            case R.id.action_delete_all_entries:
-                deleteAllTasks();
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 
     private void deleteAllTasks() {
