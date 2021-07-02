@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CatalogFragment"
-    android:background="@drawable/main_background">
+    android:background="@drawable/main_background"
+    tools:context=".CatalogFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -16,14 +15,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
+            android:layout_margin="25dp"
             android:background="@android:color/transparent"
             android:backgroundTint="@android:color/transparent"
-            android:src="@drawable/ic_menu"
-            android:layout_margin="25dp"/>
+            android:src="@drawable/ic_menu" />
     </RelativeLayout>
 
 
-    <RelativeLayout android:layout_width="match_parent"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="90dp"
         tools:context=".CatalogActivity">
@@ -32,11 +32,11 @@
             android:id="@+id/list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:divider="@android:color/transparent"
-            android:dividerHeight="10.0sp"
             android:background="@android:color/transparent"
             android:backgroundTint="@android:color/transparent"
-            android:padding="@dimen/activity_margin"/>
+            android:divider="@android:color/transparent"
+            android:dividerHeight="10.0sp"
+            android:padding="@dimen/activity_margin" />
 
         <!-- Empty view for the list -->
         <RelativeLayout
@@ -50,20 +50,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/ic_empty_sheet"/>
+                android:src="@drawable/ic_empty_sheet" />
 
             <TextView
                 android:id="@+id/empty_title_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:layout_below="@id/empty_sheet_image"
+                android:layout_centerHorizontal="true"
                 android:fontFamily="sans-serif-medium"
                 android:paddingTop="16dp"
                 android:text="@string/empty_view_title_text"
-                android:textStyle="bold"
+                android:textAppearance="?android:textAppearanceMedium"
                 android:textColor="#A2AAB0"
-                android:textAppearance="?android:textAppearanceMedium"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/empty_subtitle_text"
@@ -75,19 +75,20 @@
                 android:paddingTop="8dp"
                 android:text="@string/empty_view_subtitle_text"
                 android:textAppearance="?android:textAppearanceSmall"
-                android:textColor="#A2AAB0"/>
+                android:textColor="#A2AAB0" />
         </RelativeLayout>
-
 
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_margin="@dimen/fab_margin"
-            android:src="@drawable/ic_add"/>
-
+            android:src="@drawable/ic_add" />
+        <!--        android:background="@color/colorPrimary"-->
+        <!--        android:backgroundTint="@color/colorPrimary"-->
+        <!--        android:tint="@color/editorColorPrimary"-->
     </RelativeLayout>
 </FrameLayout>

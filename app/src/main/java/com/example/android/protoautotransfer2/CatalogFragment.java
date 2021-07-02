@@ -21,13 +21,10 @@ import androidx.loader.content.Loader;
 
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.PopupMenu;
@@ -141,21 +138,17 @@ public class CatalogFragment extends Fragment implements LoaderManager.LoaderCal
                 else if(taskInfo.equals("Copy"))
                     condition = 1;
 
-                copyFileOrDirectory(sourceDir, destinationDir, condition);
                 Toast.makeText(getContext(), "Syncing...",Toast.LENGTH_SHORT).show();
+                copyFileOrDirectory(sourceDir, destinationDir, condition);
             }
         });
 
-        filesListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id)
-            {
-                Intent intent = new Intent(getContext(), EditorActivity.class);
-                Uri currentPetUri = ContentUris.withAppendedId(FilesContract.FilesEntry.CONTENT_URI, id);
-                intent.setData(currentPetUri);
-                startActivity(intent);
-                return true;
-            }
+        filesListView.setOnItemLongClickListener((parent, view, position, id) -> {
+            Intent intent = new Intent(getContext(), EditorActivity.class);
+            Uri currentPetUri = ContentUris.withAppendedId(FilesEntry.CONTENT_URI, id);
+            intent.setData(currentPetUri);
+            startActivity(intent);
+            return true;
         });
 
 
@@ -215,10 +208,11 @@ public class CatalogFragment extends Fragment implements LoaderManager.LoaderCal
         mCursorAdapter.swapCursor(null);
     }
 
-    public static void copyFileOrDirectory(String srcDir, String dstDir, int condition)
+    public void copyFileOrDirectory(String srcDir, String dstDir, int condition)
     {
 
-        try {
+        try
+        {
             File src = new File(srcDir);
             File dst = new File(dstDir, src.getName());
 
@@ -237,10 +231,19 @@ public class CatalogFragment extends Fragment implements LoaderManager.LoaderCal
             {
                 copyFile(src, dst, condition);
             }
+
         }
         catch (Exception e)
         {
             e.printStackTrace();
+        }
+        finally {
+            String type = "";
+            if(condition  == 0)
+                type = "Moved";
+            if(condition == 1)
+                type = "Copied";
+            Toast.makeText(getContext(), "Files "+type+" Successfully.",Toast.LENGTH_SHORT).show();
         }
     }
 
