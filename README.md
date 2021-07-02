@@ -23,7 +23,7 @@ File Management made easy
 Demo video from [here](paste the link here).
 
 ## PPT
-[here](paste the link here)
+[here](https://www.canva.com/design/DAEjCcNqMow/W6KEV9Oh-tbhdCgZPqDo7g/view?utm_content=DAEjCcNqMow&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
 
 ## What it does
 
